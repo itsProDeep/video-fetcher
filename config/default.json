@@ -1,0 +1,12 @@
+{
+    "mongoDB": {
+    "host": "cluster0.fr98kbx.mongodb.net/",
+    "username": "pradeepkumarsingh564",
+    "password": "Mongo1234"
+  },
+  "youtubeData": {
+    "apiUrl": "https://www.googleapis.com/youtube/v3/search/",
+    "apiKey": "AIzaSyAAch9dKqFX1vZ485gC_F3nAxy3xFl1fP8"
+  }
+
+}

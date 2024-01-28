@@ -1,0 +1,29 @@
+{
+  "name": "video-fetcher",
+  "version": "1.0.0",
+  "description": "A project to fetch latest videos sorted in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "debug": "node --inspect src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsProDeep/video-fetcher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsProDeep/video-fetcher/issues"
+  },
+  "homepage": "https://github.com/itsProDeep/video-fetcher#readme",
+  "dependencies": {
+    "config": "^3.3.10",
+    "express": "^4.18.2",
+    "googleapis": "^131.0.0",
+    "mongodb": "^4.12.1",
+    "node-schedule": "^2.1.1",
+    "twilio": "^4.21.0"
+  }
+}
