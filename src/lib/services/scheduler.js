@@ -43,7 +43,7 @@ async function getYouTubeData() {
       return null;
     }
   }
-  getYouTubeData();
+  // getYouTubeData();
 
 const startScheduler = () => {
     try {
