@@ -23,17 +23,20 @@ async function getYouTubeData() {
       if (response.status === 200) {
         const videos = response.data.items;
         const videoDetails = videos.map(video => {
+          console.log('video==:>', video);
             return {
+              vId: video.id.videoId,
               title: video.snippet.title,
               description: video.snippet.description,
               publishTime: video.snippet.publishTime,
               thumbnails: video.snippet.thumbnails,
               cAt: new Date().valueOf(),
-              uAt: new Date().valueOf()
+              uAt: new Date().valueOf(),
+              del: 0
             };
           });
-          await refreshData(videoDetails);
-        // return result;
+          const res = await refreshData(videoDetails);
+          console.log(res);
       } else {
         console.error('Error fetching data from YouTube API:', response.statusText);
         return null;
@@ -43,12 +46,11 @@ async function getYouTubeData() {
       return null;
     }
   }
-  // getYouTubeData();
 
 const startScheduler = () => {
     try {
-        // refresh YT videos data every 20 seconds
-        // schedule.scheduleJob('*/20 * * * * *', getYouTubeData);
+        // refresh YT videos data every 30 seconds
+        // schedule.scheduleJob('*/30 * * * * *', getYouTubeData);
     } catch (err) {
         logger.error(err);
     }

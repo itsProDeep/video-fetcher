@@ -24,6 +24,7 @@
     "googleapis": "^131.0.0",
     "mongodb": "^4.12.1",
     "node-schedule": "^2.1.1",
+    "redis": "^4.6.12",
     "twilio": "^4.21.0"
   }
 }

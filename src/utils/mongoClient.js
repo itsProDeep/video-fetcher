@@ -1,7 +1,7 @@
 const config = require('config');
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = `mongodb+srv://${config.mongoDB.username}:${config.mongoDB.password}@${config.mongoDB.host}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${config.mongoDB.username}:${config.mongoDB.password}@${config.mongoDB.host}?retryWrites=true&w=majority&maxIdleTimeMS=300000`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect(err => {
@@ -11,10 +11,10 @@ client.connect(err => {
         console.log("MongoDB connected successfully for srv:", uri);
     }
 });
-const MongoDBCollections = Object.freeze({
+const Collections = Object.freeze({
     VIDEOS: {
-        name: 'videoFetcher',
-        collections: {
+        db: 'videoFetcher',
+        collection: {
             VIDEOS_DATA: 'videosDataYT'
         }
     }
@@ -91,11 +91,11 @@ async function insertOne(db, collection, query) {
     }
 }
 
-async function insertMany(db, collection, query) {
+async function insertMany(db, collection, query, options = {}) {
     try {
         const database = client.db(db);
         const dbCollection = database.collection(collection);
-        return await dbCollection.insertMany(query);
+        return await dbCollection.insertMany(query, options);
     } catch (ex) {
         throw ex
     }
@@ -103,7 +103,7 @@ async function insertMany(db, collection, query) {
 
 
 module.exports = {
-    MongoDBCollections,
+    Collections,
     find,
     updateOne,
     getCollection,
