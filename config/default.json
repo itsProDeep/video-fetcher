@@ -1,12 +1,17 @@
 {
     "mongoDB": {
-    "host": "cluster0.fr98kbx.mongodb.net/",
+    "host": "cluster0.fr98kbx.mongodb.net",
     "username": "pradeepkumarsingh564",
-    "password": "Mongo1234"
+    "password": "9BzAoH9Fk52ae2UI"
   },
   "youtubeData": {
     "apiUrl": "https://www.googleapis.com/youtube/v3/search/",
     "apiKey": "AIzaSyAAch9dKqFX1vZ485gC_F3nAxy3xFl1fP8"
+  },
+  "redis": {
+    "host": "redis-15380.c326.us-east-1-3.ec2.cloud.redislabs.com",
+    "port": 15380,
+    "password": "kNDydERcf06lw1HiJu8D3X2uL0VEk9KU"
   }
 
 }

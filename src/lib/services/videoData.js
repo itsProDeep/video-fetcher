@@ -1,4 +1,4 @@
-const { getVideosDataDao } = require('../dao/videos-data-dao');
+const { getVideosDataDao, getSearchDataDao } = require('../dao/videos-data-dao');
 
 const getVideosData = async (pageNo, pageSize) => {
     try {
@@ -8,9 +8,9 @@ const getVideosData = async (pageNo, pageSize) => {
     }
 }
 
-const getSearchData = async (pageNo, pageSize) => {
+const getSearchData = async (searchTerm) => {
     try {
-        
+        return getSearchDataDao(searchTerm);
     } catch (err) {
         throw err;
     }

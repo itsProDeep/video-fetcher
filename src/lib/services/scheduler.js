@@ -23,7 +23,6 @@ async function getYouTubeData() {
       if (response.status === 200) {
         const videos = response.data.items;
         const videoDetails = videos.map(video => {
-          console.log('video==:>', video);
             return {
               vId: video.id.videoId,
               title: video.snippet.title,

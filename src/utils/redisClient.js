@@ -18,7 +18,7 @@ redisClient.on('error', (err) => {
 });
 
 redisClient.on('ready', () => {
-    logger.info('redis is ready to accept connections');
+  console.log('redis is ready to accept connections');
 });
 redisClient.connect();
 module.exports = {
