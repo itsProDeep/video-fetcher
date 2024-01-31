@@ -49,7 +49,7 @@ async function getYouTubeData() {
 const startScheduler = () => {
     try {
         // refresh YT videos data every 30 seconds
-        // schedule.scheduleJob('*/30 * * * * *', getYouTubeData);
+        schedule.scheduleJob('*/30 * * * * *', getYouTubeData);
     } catch (err) {
         logger.error(err);
     }
